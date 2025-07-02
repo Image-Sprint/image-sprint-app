@@ -26,13 +26,20 @@ export const LOGIN_ERROR_FALLBACK_STYLE = {
   button: 'px-6 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600',
 };
 
-export const NAVIGATION_STYLE = {
-  background:
-    'flex justify-center w-full max-w-screen-md h-16 bg-blue-500 shadow-xl z-10 rounded-t-xl',
-  buttonList: 'flex w-full h-full items-center',
-  button: 'flex-1 flex flex-col',
-  buttonImage: 'h-6 md:h-8 object-contain',
-  buttonText: 'text-xs mt-1 font-bold',
+export const NAVIGATION_BAR_STYLE = {
+  container:
+    'relative flex items-center justify-between px-4 py-5 shadow-md bg-white',
+  leftGroup: 'flex items-center space-x-24',
+  logoButton: 'flex items-center space-x-2 cursor-pointer',
+  logoImage: 'w-6 h-6',
+  logoText: 'text-xl font-bold text-blue-600',
+  desktopNav: 'hidden md:flex space-x-24 text-gray-600 font-medium',
+  navButtonBase: 'flex items-center space-x-1',
+  navButtonActive: 'text-blue-600 font-semibold',
+  navButtonInactive: 'hover:text-blue-600',
+  mobileMenuButton: 'md:hidden text-gray-600',
+  mobileDropdown:
+    'absolute top-full left-0 w-full flex flex-col bg-white shadow-md z-20 px-4 py-2 md:hidden text-gray-600 font-medium space-y-2',
 };
 
 export const ERROR_FALLBACK_STYLE = {
