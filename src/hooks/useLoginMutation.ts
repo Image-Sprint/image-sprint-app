@@ -1,4 +1,4 @@
-import { postLogin } from '@/api/login';
+import { socialLogin } from '@/api/login';
 import { ACCESS_TOKEN_KEY } from '@/constants/api';
 import { ROUTE_URL_FULL } from '@/constants/routers';
 import { useAuthStore } from '@/stores/authStore';
@@ -10,7 +10,7 @@ const useLoginMutation = () => {
   const { setIsLoggedIn } = useAuthStore();
 
   const loginMutation = useMutation({
-    mutationFn: postLogin,
+    mutationFn: socialLogin,
     onSuccess: ({ data: { accessToken } }) => {
       setIsLoggedIn(true);
       localStorage.setItem(ACCESS_TOKEN_KEY, accessToken);
