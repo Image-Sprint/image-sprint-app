@@ -19,6 +19,7 @@ const queryClient = new QueryClient({
       staleTime: API_STALE_TIME,
       refetchOnWindowFocus: true,
       refetchOnMount: true,
+      useErrorBoundary: true,
     },
   },
 } as QueryClientConfig);

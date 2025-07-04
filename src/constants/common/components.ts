@@ -29,7 +29,7 @@ export const NAV_MENU_ITEM_LIST: NavMenuItem[] = [
     icon: AlertCircle,
   },
   {
-    path: '/home/user',
+    path: '/home/profile',
     label: '마이페이지',
     icon: User,
   },
