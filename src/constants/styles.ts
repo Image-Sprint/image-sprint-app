@@ -62,8 +62,7 @@ export const PROFILE_STYLE = {
   header: 'h-16 flex items-center justify-center',
   main: 'flex-1 flex flex-col items-center justify-between px-4 py-6',
   logoutWrapper: 'w-full max-w-2xl px-2',
-  logoutButton:
-    'w-full bg-gray-200 text-gray-500 py-3 rounded shadow-sm cursor-not-allowed',
+  logoutButton: 'w-full bg-gray-300 text-gray-500 py-3 rounded shadow-sm',
 };
 
 export const PROFILE_CONTENT_STYLE = {

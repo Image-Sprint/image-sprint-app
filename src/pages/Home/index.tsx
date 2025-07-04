@@ -18,7 +18,7 @@ const Home = () => {
         return '변환 결과';
       case ROUTE_STRING.NOTIFICATION:
         return '알림 목록';
-      case ROUTE_STRING.USER:
+      case ROUTE_STRING.PROFILE:
         return '마이 페이지';
     }
     return '';
