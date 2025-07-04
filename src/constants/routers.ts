@@ -5,7 +5,7 @@ export const ROUTE_STRING = {
   IMAGE: 'image',
   JOB: 'job',
   NOTIFICATION: 'notification',
-  USER: 'user',
+  PROFILE: 'profile',
 };
 
 export const ROUTE_URL_FULL = {
@@ -15,5 +15,5 @@ export const ROUTE_URL_FULL = {
   IMAGE: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.IMAGE,
   JOB: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.JOB,
   NOTIFICATION: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.NOTIFICATION,
-  USER: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.USER,
+  PROFILE: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.PROFILE,
 };
