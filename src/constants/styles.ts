@@ -19,6 +19,11 @@ export const LOGIN_STYLE = {
   loading: 'flex flex-col items-center justify-center h-screen',
 };
 
+export const LOADING_SPINNER_STYLE = {
+  container: 'flex justify-center items-center h-48',
+  button: 'animate-spin rounded-full border-4 border-solid border-gray-200',
+};
+
 export const LOGIN_ERROR_FALLBACK_STYLE = {
   container: 'flex flex-col items-center justify-center min-h-screen p-4',
   title: 'text-2xl font-bold mb-4',
@@ -50,4 +55,26 @@ export const ERROR_FALLBACK_STYLE = {
   subText: 'text-sm text-gray-600 mb-6 font-bold',
   homeButton:
     'mt-2 px-4 py-2 rounded-md bg-red-600 text-white font-medium hover:bg-red-700 transition',
+};
+
+export const PROFILE_STYLE = {
+  pageWrapper: 'h-screen w-full flex flex-col bg-white',
+  header: 'h-16 flex items-center justify-center',
+  main: 'flex-1 flex flex-col items-center justify-between px-4 py-6',
+  logoutWrapper: 'w-full max-w-2xl px-2',
+  logoutButton:
+    'w-full bg-gray-200 text-gray-500 py-3 rounded shadow-sm cursor-not-allowed',
+};
+
+export const PROFILE_CONTENT_STYLE = {
+  wrapper: 'flex flex-col items-center gap-6',
+  avatarIcon: 'w-32 h-32 text-gray-400',
+  infoContainer: 'w-screen max-w-2xl space-y-4 text-base',
+  row: 'flex justify-between px-2',
+  rowWithCenter: 'flex justify-between items-center px-2',
+  label: 'font-medium text-gray-600',
+  socialIconWrapper: 'w-8 h-8',
+  socialIconImage: 'w-full h-full object-cover rounded-full',
+  webhookButton:
+    'bg-blue-500 text-white px-4 py-1 rounded text-sm hover:bg-blue-600',
 };
