@@ -3,9 +3,17 @@ import { useAuthStore } from '@/stores/authStore';
 import { Navigate, Outlet } from 'react-router-dom';
 
 const GuardedRoute = () => {
-  const { isLoggedIn } = useAuthStore();
+  const { isLoggedIn, authError } = useAuthStore();
 
-  return isLoggedIn ? <Outlet /> : <Navigate to={ROUTE_URL_FULL.LOGIN} />;
+  if (!isLoggedIn) {
+    return authError ? (
+      <Navigate to="/error" replace />
+    ) : (
+      <Navigate to={ROUTE_URL_FULL.LOGIN} replace />
+    );
+  }
+
+  return <Outlet />;
 };
 
 export default GuardedRoute;

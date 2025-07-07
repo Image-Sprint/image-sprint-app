@@ -1,7 +1,7 @@
-import KakaoLoginButton from '@/components/Login/KakaoLoginButton';
-import NaverLoginButton from '@/components/Login/NaverLoginButton';
 import { LOGIN_STYLE } from '@/constants/styles';
 import Header from '@/components/common/Header';
+import KakaoLoginButton from '@/components/login/KakaoLoginButton';
+import NaverLoginButton from '@/components/login/NaverLoginButton';
 
 const Login = () => {
   // const { isLoggedIn } = useAuthStore();

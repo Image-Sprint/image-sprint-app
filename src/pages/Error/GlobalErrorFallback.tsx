@@ -1,8 +1,21 @@
 import { ERROR_FALLBACK_STYLE } from '@/constants/styles';
+import { ACCESS_TOKEN_KEY } from '@/constants/api';
+import { useAuthStore } from '@/stores/authStore';
 import type { AxiosError } from 'axios';
+import { useEffect } from 'react';
 
 const GlobalErrorFallback = ({ error }: { error?: AxiosError }) => {
+  const { setIsLoggedIn, setAuthError } = useAuthStore();
+
   const status = error?.response?.status ?? 500;
+
+  useEffect(() => {
+    if (status === 401 || status === 403) {
+      setIsLoggedIn(false);
+      setAuthError(error ?? null);
+      localStorage.removeItem(ACCESS_TOKEN_KEY);
+    }
+  }, [status, error, setIsLoggedIn, setAuthError]);
 
   const getMessage = () => {
     switch (status) {
@@ -29,9 +42,15 @@ const GlobalErrorFallback = ({ error }: { error?: AxiosError }) => {
         <div className={ERROR_FALLBACK_STYLE.subText}>
           문제가 계속되면 관리자에게 문의해 주세요.
         </div>
-        <a href="/" className={ERROR_FALLBACK_STYLE.homeButton}>
-          메인으로 돌아가기
-        </a>
+        {status === 401 ? (
+          <a href="/login" className={ERROR_FALLBACK_STYLE.homeButton}>
+            로그인하러 가기
+          </a>
+        ) : (
+          <a href="/home" className={ERROR_FALLBACK_STYLE.homeButton}>
+            메인으로 돌아가기
+          </a>
+        )}
       </div>
     </div>
   );

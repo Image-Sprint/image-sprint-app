@@ -1,6 +1,6 @@
 //Layout styles
 export const LAYOUT_STYLE = {
-  screenLayout: 'h-screen flex flex-col',
+  screenLayout: 'h-screen flex  bg-gray-50 flex-col',
   mainContainer: 'flex-1 flex justify-center w-full min-h-0 pb-4',
   pageContent: 'flex-1 flex flex-col w-full min-h-0 mt-4',
 };
@@ -58,9 +58,9 @@ export const ERROR_FALLBACK_STYLE = {
 };
 
 export const PROFILE_STYLE = {
-  pageWrapper: 'h-screen w-full flex flex-col bg-white',
-  header: 'h-16 flex items-center justify-center',
-  main: 'flex-1 flex flex-col items-center justify-between px-4 py-6',
+  pageWrapper: 'h-screen bg-gray-50 w-full flex flex-col bg-white',
+  header: 'h-16 flex bg-gray-50 items-center justify-center',
+  main: 'flex-1 flex flex-col bg-gray-50 items-center justify-between px-4 py-6',
   logoutWrapper: 'w-full max-w-2xl px-2',
   logoutButton: 'w-full bg-gray-300 text-gray-500 py-3 rounded shadow-sm',
 };
@@ -76,4 +76,26 @@ export const PROFILE_CONTENT_STYLE = {
   socialIconImage: 'w-full h-full object-cover rounded-full',
   webhookButton:
     'bg-blue-500 text-white px-4 py-1 rounded text-sm hover:bg-blue-600',
+};
+
+export const NOTIFICATION_STYLE = {
+  pageWrapper: 'min-h-screen bg-gray-50 px-4 py-8',
+  header: 'max-w-2xl  mx-auto',
+  main: 'space-y-4',
+};
+
+export const NOTIFICATION_ITEM_STYLE = {
+  itemContainer:
+    'bg-white shadow-sm rounded-lg px-6 py-4 border border-gray-200',
+  badgeWrapper: 'flex items-center gap-2 mb-1',
+  badge:
+    'inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full font-medium',
+  icon: 'w-4 h-4',
+  content: 'text-sm text-gray-900 font-medium',
+  dateWrapper: 'mt-2 flex items-center text-xs text-gray-500',
+  calendarIcon: 'w-4 h-4 mr-1 text-gray-400',
+
+  pageWrapper: 'min-h-screen bg-gray-50 px-4 py-8',
+  header: 'max-w-2xl mx-auto',
+  main: 'space-y-4',
 };
