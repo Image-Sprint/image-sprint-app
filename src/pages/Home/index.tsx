@@ -1,8 +1,7 @@
 import Header from '@/components/common/Header';
-import { useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { ROUTE_STRING } from '@/constants/routers';
 import { LAYOUT_STYLE } from '@/constants/styles';
-import GuardedRoute from '../GuardedRoute';
 import NavigationBar from '@/components/common/NavigationBar';
 
 const Home = () => {
@@ -30,7 +29,7 @@ const Home = () => {
       <div className={LAYOUT_STYLE.mainContainer}>
         <div className={LAYOUT_STYLE.pageContent}>
           <Header headerTitle={getTitle(subPath)} />
-          <GuardedRoute />
+          <Outlet />
         </div>
       </div>
     </div>
