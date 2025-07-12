@@ -1,4 +1,4 @@
-import { positions, styleMap } from '@/constants/imageConverter';
+import { POSITIONS, STYLE_MAP } from '@/constants/imageConverter';
 import type { WatermarkPosition } from '@/types/imageConverter';
 import { cn } from '@/utils/classUtils';
 import { X } from 'lucide-react';
@@ -36,7 +36,7 @@ const WatermarkModal = ({
   if (!isOpen) return null;
 
   const getPositionClass = (position: WatermarkPosition): string => {
-    return `absolute ${styleMap[position]}`;
+    return `absolute ${STYLE_MAP[position]}`;
   };
 
   return (
@@ -75,7 +75,7 @@ const WatermarkModal = ({
         {/* 포지션 + 투명도 */}
         <div className="border rounded-md p-4 mb-4">
           <div className="grid grid-cols-3 gap-2 mb-2">
-            {positions.map((pos, idx) => (
+            {POSITIONS.map((pos, idx) => (
               <button
                 key={idx}
                 className={`w-8 h-8 rounded-sm border text-center text-xs font-bold ${

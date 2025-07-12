@@ -5,7 +5,7 @@ import {
   SelectContent,
   SelectItem,
 } from '@/components/common/Select';
-import { formatOptions } from '@/constants/imageConverter';
+import { FORMAT_OPTIONS } from '@/constants/imageConverter';
 
 type Props = {
   format: string;
@@ -20,12 +20,14 @@ const FormatSelector = ({ format, onFormatChange }: Props) => (
         <>
           <SelectTrigger onClick={() => setOpen(!open)}>
             <SelectValue
-              value={formatOptions.find((f) => f.value === format)?.label || ''}
+              value={
+                FORMAT_OPTIONS.find((f) => f.value === format)?.label || ''
+              }
               placeholder="형식 선택"
             />
           </SelectTrigger>
           <SelectContent open={open}>
-            {formatOptions.map(({ value, label }) => (
+            {FORMAT_OPTIONS.map(({ value, label }) => (
               <SelectItem
                 key={value}
                 value={value}
