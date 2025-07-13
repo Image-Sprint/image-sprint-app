@@ -3,7 +3,7 @@ import Login from './pages/Login';
 import { ROUTE_STRING, ROUTE_URL_FULL } from './constants/routers';
 import Home from './pages/Home';
 import ImageConverter from './pages/Home/ImageConverter';
-import Job from './pages/Home/Job';
+import ProcessingJobResult from './pages/Home/ProcessingJobResult';
 import Notification from './pages/Home/Notification';
 import Profile from './pages/Home/Profile';
 import LoginErrorBoundary from './pages/Error/LoginErrorBoundary';
@@ -33,7 +33,7 @@ function App() {
         <Route path={ROUTE_STRING.HOME} element={<Home />}>
           <Route index element={<Navigate to={ROUTE_STRING.IMAGE} replace />} />
           <Route path={ROUTE_STRING.IMAGE} element={<ImageConverter />} />
-          <Route path={ROUTE_STRING.JOB} element={<Job />} />
+          <Route path={ROUTE_STRING.JOB} element={<ProcessingJobResult />} />
           <Route path={ROUTE_STRING.NOTIFICATION} element={<Notification />} />
           <Route path={ROUTE_STRING.PROFILE} element={<Profile />} />
         </Route>

@@ -99,3 +99,19 @@ export const NOTIFICATION_ITEM_STYLE = {
   header: 'max-w-2xl mx-auto',
   main: 'space-y-4',
 };
+
+export const JOB_ITEM_STYLE = {
+  itemContainer:
+    'bg-white shadow-sm rounded-lg px-6 py-4 border border-gray-200',
+  badgeWrapper: 'flex items-center gap-2 mb-1',
+  badge:
+    'inline-flex items-center gap-1 text-xs px-2 py-1 rounded-full font-medium',
+  icon: 'w-4 h-4',
+  content: 'text-sm text-gray-900 font-medium',
+  dateWrapper: 'mt-2 flex items-center text-xs text-gray-500',
+  calendarIcon: 'w-4 h-4 mr-1 text-gray-400',
+
+  pageWrapper: 'min-h-screen bg-gray-50 px-4 py-8',
+  header: 'max-w-2xl mx-auto',
+  main: 'space-y-4',
+};
