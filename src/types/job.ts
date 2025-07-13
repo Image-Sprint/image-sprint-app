@@ -12,8 +12,25 @@ export type CreateJobRequestDto = {
 };
 
 export interface JobResponse {
+  jobs: JobData[];
+  nextCursor: string | null;
+  hasNext: boolean;
+}
+
+export interface JobData {
   jobId: number;
-  status: string;
+  status: JobStatus;
   imageCount: number;
   originalSize: number;
+  createdAt: string;
+  expiresAt?: string;
+  zipUrl?: string;
 }
+
+export type GetJobsParams = {
+  cursor?: string | null;
+  pageSize?: number;
+};
+
+// enum type 관련
+export type JobStatus = 'PENDING' | 'PROCESSING' | 'DONE' | 'FAILED';

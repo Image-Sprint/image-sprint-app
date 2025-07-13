@@ -1,6 +1,6 @@
 import type { WatermarkPosition } from '@/types/imageConverter';
 
-export const formatOptions = [
+export const FORMAT_OPTIONS = [
   { value: 'jpeg', label: 'JPG' },
   { value: 'png', label: 'PNG' },
   { value: 'webp', label: 'WEBP' },
@@ -9,7 +9,7 @@ export const formatOptions = [
   { value: 'tiff', label: 'TIFF' },
 ];
 
-export const positions: { label: string; value: WatermarkPosition }[] = [
+export const POSITIONS: { label: string; value: WatermarkPosition }[] = [
   { label: '⬛', value: 'TOP_LEFT' },
   { label: '⬛', value: 'TOP_CENTER' },
   { label: '⬛', value: 'TOP_RIGHT' },
@@ -21,7 +21,7 @@ export const positions: { label: string; value: WatermarkPosition }[] = [
   { label: '⬛', value: 'BOTTOM_RIGHT' },
 ];
 
-export const styleMap: Record<WatermarkPosition, string> = {
+export const STYLE_MAP: Record<WatermarkPosition, string> = {
   TOP_LEFT: 'top-2 left-2',
   TOP_CENTER: 'top-2 left-1/2 -translate-x-1/2',
   TOP_RIGHT: 'top-2 right-2',
