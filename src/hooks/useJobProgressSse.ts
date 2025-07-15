@@ -9,7 +9,7 @@ export const useJobProgressSse = (
   queryKey: readonly ['jobs', Omit<GetJobsParams, 'cursor'>]
 ) => {
   const queryClient = useQueryClient();
-  const jobIdsRef = useRef<number[]>([]); // 🔁 초기 빈 배열로 시작
+  const jobIdsRef = useRef<number[]>([]); // 초기 빈 배열로 시작
 
   useEffect(() => {
     jobIdsRef.current = myJobIds;
@@ -62,7 +62,7 @@ export const useJobProgressSse = (
             }
           );
 
-          // ✅ 너무 빠른 리페치 방지 + 한번만 invalidate
+          // 너무 빠른 리페치 방지 + 한번만 invalidate
           setTimeout(() => {
             queryClient.invalidateQueries({ queryKey });
           }, 500);

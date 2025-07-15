@@ -13,4 +13,5 @@ export const API_PATH = {
   JOB: '/jobs',
   NOTIFICATION: '/notifications',
   USER: 'users/me',
+  WEBHOOK: '/webhooks',
 };

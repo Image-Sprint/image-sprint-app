@@ -7,3 +7,16 @@ export interface ProfileData {
   provider: ProviderType;
   createdAt: string | null;
 }
+
+export type WebhookData = {
+  webhookId: number;
+  type: WebhookType;
+  url: string;
+};
+
+export type WebhookRequestDto = {
+  type: WebhookType;
+  url: string;
+};
+
+export type WebhookType = 'SLACK' | 'DISCORD';
