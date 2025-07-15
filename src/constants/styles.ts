@@ -61,7 +61,7 @@ export const PROFILE_STYLE = {
   pageWrapper: 'h-screen bg-gray-50 w-full flex flex-col bg-white',
   header: 'h-16 flex bg-gray-50 items-center justify-center',
   main: 'flex-1 flex flex-col bg-gray-50 items-center justify-between px-4 py-6',
-  logoutWrapper: 'w-full max-w-2xl px-2',
+  logoutWrapper: 'w-full max-w-2xl px-2 mt-8',
   logoutButton: 'w-full bg-gray-300 text-gray-500 py-3 rounded shadow-sm',
 };
 
@@ -76,6 +76,9 @@ export const PROFILE_CONTENT_STYLE = {
   socialIconImage: 'w-full h-full object-cover rounded-full',
   webhookButton:
     'bg-blue-500 text-white px-4 py-1 rounded text-sm hover:bg-blue-600',
+  section: 'mt-6',
+  sectionTitle: 'text-base font-semibold text-gray-800 mb-2',
+  rowWithColumn: 'flex flex-col gap-2 px-2',
 };
 
 export const NOTIFICATION_STYLE = {
