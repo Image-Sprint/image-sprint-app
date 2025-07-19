@@ -8,7 +8,7 @@ type JobItemProps = {
   imageCount: number;
   originalSize: number;
   createdAt: string;
-  expiresAt?: string | null;
+  expiredAt?: string | null;
   zipUrl?: string;
   progress?: number;
 };
@@ -20,15 +20,15 @@ const JobItem = (props: JobItemProps) => {
     imageCount,
     originalSize,
     createdAt,
-    expiresAt,
+    expiredAt,
     zipUrl,
     progress = 0,
   } = props;
 
   const isExpired =
-    expiresAt !== null &&
-    expiresAt !== undefined &&
-    new Date(expiresAt).getTime() < Date.now();
+    expiredAt !== null &&
+    expiredAt !== undefined &&
+    new Date(expiredAt).getTime() < Date.now();
 
   const isDone =
     status === 'DONE' || (status === 'PROCESSING' && progress === 1);
@@ -62,7 +62,7 @@ const JobItem = (props: JobItemProps) => {
             <span>작업 실패</span>
           </>
         )}
-        {isExpired && (
+        {status !== 'FAILED' && isExpired && (
           <>
             <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
             <span>기한 만료</span>
@@ -93,7 +93,7 @@ const JobItem = (props: JobItemProps) => {
             <span className="text-red-500">✕</span> ZIP 다운로드
           </div>
         )}
-        {isExpired && (
+        {status !== 'FAILED' && isExpired && (
           <button
             className="flex items-center text-sm gap-1 border border-gray-300 rounded px-2 py-1 text-gray-400 cursor-not-allowed"
             disabled

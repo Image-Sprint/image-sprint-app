@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import './index.css';
 import App from './App.tsx';
 import { BrowserRouter } from 'react-router-dom';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 import {
   QueryClient,
   QueryClientProvider,
@@ -29,6 +30,7 @@ createRoot(document.getElementById('root')!).render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <GlobalErrorBoundary>
+          <ReactQueryDevtools initialIsOpen={false} />
           <App />
         </GlobalErrorBoundary>
       </BrowserRouter>
