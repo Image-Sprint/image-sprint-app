@@ -3,10 +3,7 @@ import type { WatermarkPosition } from '@/types/imageConverter';
 export const FORMAT_OPTIONS = [
   { value: 'jpeg', label: 'JPG' },
   { value: 'png', label: 'PNG' },
-  { value: 'webp', label: 'WEBP' },
-  { value: 'avif', label: 'AVIF' },
   { value: 'bmp', label: 'BMP' },
-  { value: 'tiff', label: 'TIFF' },
 ];
 
 export const POSITIONS: { label: string; value: WatermarkPosition }[] = [
