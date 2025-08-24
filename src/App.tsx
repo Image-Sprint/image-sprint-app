@@ -1,35 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Navigate, Route, Routes } from 'react-router-dom';
+import Login from './pages/Login';
+import { ROUTE_STRING, ROUTE_URL_FULL } from './constants/routers';
+import Home from './pages/Home';
+import ImageConverter from './pages/Home/ImageConverter';
+import ProcessingJobResult from './pages/Home/ProcessingJobResult';
+import Notification from './pages/Home/Notification';
+import Profile from './pages/Home/Profile';
+import LoginErrorBoundary from './pages/Error/LoginErrorBoundary';
+import OauthRedirect from './pages/OauthRedirect';
+import '@/api/axiosInterceptors';
+import GuardedRoute from './pages/GuardedRoute';
+import GlobalErrorPage from './pages/Error/GlobalErrorPage';
+import Converting from './pages/Home/Converting';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <Routes>
+      {/* 공개 라우트 */}
+      <Route path="/" element={<Login />} />
+      <Route path={ROUTE_STRING.LOGIN} element={<Login />} />
+      <Route
+        path={ROUTE_STRING.OAUTH_REDIRECT}
+        element={
+          <LoginErrorBoundary>
+            <OauthRedirect />
+          </LoginErrorBoundary>
+        }
+      />
+
+      {/* 보호된 라우트 */}
+      <Route element={<GuardedRoute />}>
+        <Route path={ROUTE_STRING.HOME} element={<Home />}>
+          <Route index element={<Navigate to={ROUTE_STRING.IMAGE} replace />} />
+          <Route path={ROUTE_STRING.IMAGE} element={<ImageConverter />} />
+          <Route path={ROUTE_STRING.JOB} element={<ProcessingJobResult />} />
+          <Route path={ROUTE_STRING.NOTIFICATION} element={<Notification />} />
+          <Route path={ROUTE_STRING.PROFILE} element={<Profile />} />
+        </Route>
+
+        <Route path={ROUTE_STRING.CONVERTING} element={<Converting />} />
+      </Route>
+
+      {/* 에러 fallback 전용 라우트 */}
+      <Route path="/error" element={<GlobalErrorPage />} />
+
+      {/* 다른 모든 경로는 홈으로 */}
+      <Route
+        path="*"
+        element={<Navigate to={ROUTE_URL_FULL.IMAGE} replace />}
+      />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

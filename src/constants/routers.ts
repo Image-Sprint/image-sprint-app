@@ -1,0 +1,21 @@
+export const ROUTE_STRING = {
+  LOGIN: 'login',
+  OAUTH_REDIRECT: '/oauth/:provider',
+  HOME: 'home',
+  IMAGE: 'image',
+  CONVERTING: 'converting',
+  JOB: 'job',
+  NOTIFICATION: 'notification',
+  PROFILE: 'profile',
+};
+
+export const ROUTE_URL_FULL = {
+  LOGIN: '/' + ROUTE_STRING.LOGIN,
+  OAUTH_REDIRECT: '/' + ROUTE_STRING.OAUTH_REDIRECT,
+  CONVERTING: '/' + ROUTE_STRING.CONVERTING,
+  HOME: '/' + ROUTE_STRING.HOME,
+  IMAGE: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.IMAGE,
+  JOB: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.JOB,
+  NOTIFICATION: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.NOTIFICATION,
+  PROFILE: '/' + ROUTE_STRING.HOME + '/' + ROUTE_STRING.PROFILE,
+};

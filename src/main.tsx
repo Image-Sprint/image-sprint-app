@@ -1,10 +1,39 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.tsx';
+import { BrowserRouter } from 'react-router-dom';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+import {
+  QueryClient,
+  QueryClientProvider,
+  type QueryClientConfig,
+} from '@tanstack/react-query';
+import { API_RETRY_COUNT, API_STALE_TIME } from './constants/api.ts';
+import GlobalErrorBoundary from './pages/Error/GlobalErrorBoundary.tsx';
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+      retry: API_RETRY_COUNT,
+      staleTime: API_STALE_TIME,
+      refetchOnWindowFocus: true,
+      refetchOnMount: true,
+      useErrorBoundary: true,
+    },
+  },
+} as QueryClientConfig);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <GlobalErrorBoundary>
+          <ReactQueryDevtools initialIsOpen={false} />
+          <App />
+        </GlobalErrorBoundary>
+      </BrowserRouter>
+    </QueryClientProvider>
+  </StrictMode>
+);
